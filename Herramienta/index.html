@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarea - Apache Hive</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
+
+<style>
+
+:root{
+  --bg:#1b1008;
+  --panel:#2c1a12;
+  --accent:#ff6b35;
+  --accent2:#ffb347;
+  --accent3:#ffd166;
+  --text:#fffaf5;
+  --muted:#cfa27a;
+}
+
+.reveal{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Segoe UI, sans-serif;
+}
+
+.reveal .slides{
+  text-align:left;
+}
+
+h1,h2,h3{
+  color:var(--accent);
+}
+
+.cover{
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border-radius:5px;
+  background:var(--accent);
+  color:white;
+  font-size:.8em;
+  margin-bottom:20px;
+}
+
+.sub{
+  color:var(--accent2);
+}
+
+.tarea{
+  color:var(--muted);
+  margin-top:20px;
+}
+
+.nav-hint{
+  margin-top:30px;
+  color:var(--muted);
+  font-size:.8em;
+}
+
+.nav-hint span{
+  color:var(--accent2);
+}
+
+.sec-cover{
+  text-align:center;
+}
+
+.num{
+  font-size:5em;
+  font-weight:bold;
+  color:rgba(255,107,53,.2);
+}
+
+.card{
+  background:var(--panel);
+  padding:15px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid rgba(255,107,53,.3);
+}
+
+.use-case{
+  background:#331d14;
+  border-left:4px solid var(--accent2);
+  border-radius:8px;
+
+  padding:10px 15px;
+  margin:10px 0;
+}
+
+.uc-title{
+  color:var(--accent2);
+  font-weight:bold;
+  margin-bottom:4px;
+}
+
+.v-hint{
+  margin-top:25px;
+  color:var(--muted);
+}
+
+.arrow{
+  color:var(--accent2);
+}
+
+.reveal .progress{
+  color:var(--accent);
+}
+
+.fuente{
+  font-size:.55em;
+  color:var(--muted);
+  margin-top:6px;
+  display:block;
+}
+
+.media-placeholder{
+  background:var(--panel);
+  border:2px dashed var(--accent2);
+  border-radius:12px;
+  min-height:380px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:var(--muted);
+  font-size:.8em;
+  padding:20px;
+}
+
+.media-placeholder strong{
+  color:var(--accent2);
+  font-size:1.3em;
+  display:block;
+  margin-bottom:8px;
+}
+
+.compare-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+
+.compare-table th,
+.compare-table td{
+  border:1px solid rgba(255,107,53,.3);
+  padding:12px 15px;
+  text-align:left;
+}
+
+.compare-table th{
+  background:var(--panel);
+  color:var(--accent2);
+}
+
+.compare-table td{
+  background:rgba(255,107,53,.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ========================= -->
+<!-- PORTADA -->
+<!-- ========================= -->
+
+<section class="cover">
+
+<div class="badge">
+APACHE HIVE
+</div>
+
+<h1>
+🐝 Apache Hive
+</h1>
+
+<p>
+Data Warehousing sobre Hadoop
+</p>
+
+<p class="tarea">
+Procesamiento de Datos en la Nube
+</p>
+
+<div class="nav-hint">
+<span>→</span> Navegar temas principales |
+<span>↓</span> Profundizar contenido
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- TEMA 1: ¿Qué es? -->
+<!-- ========================= -->
+
+<section>
+
+<!-- Portada del tema -->
+
+<section class="sec-cover">
+
+<div class="num">🐝</div>
+
+<h2>
+¿Qué es Apache Hive?
+</h2>
+
+<p>
+Data warehouse open-source construido sobre Hadoop.
+</p>
+
+<div class="v-hint">
+<span class="arrow">↓</span>
+Descripción · Características · Funcionamiento
+</div>
+
+</section>
+
+
+<!-- Descripción -->
+
+<section>
+
+<h2>¿Qué es?</h2>
+
+<div class="card">
+
+<p>
+
+Apache Hive es una herramienta de Big Data construida sobre Hadoop
+que permite consultar y gestionar grandes volúmenes de datos
+distribuidos utilizando HiveQL, un lenguaje prácticamente idéntico
+al SQL tradicional. Su gran ventaja es que traduce consultas
+sencillas de bases de datos en procesos complejos de Apache Hadoop,
+facilitando el análisis masivo sin necesidad de programar en
+código complejo.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- Características -->
+
+<section>
+
+<h2>Características</h2>
+
+<div class="card">
+✅ Data warehouse open-source construido sobre Hadoop.
+</div>
+
+<div class="card">
+✅ Le pone una interfaz SQL (HiveQL) a datos enormes guardados como archivos.
+</div>
+
+<div class="card">
+✅ Traduce tu SQL a trabajos distribuidos (Tez / MapReduce / Spark).
+</div>
+
+</section>
+
+</section>
+
+<!-- ========================= -->
+<!-- TEMA 2: ¿Para qué sirve? / Uso -->
+<!-- ========================= -->
+
+<section>
+
+<!-- Portada del tema -->
+
+<section class="sec-cover">
+
+<div class="num">⚙️</div>
+
+<h2>
+¿Para qué sirve? / Uso
+</h2>
+
+<p>
+Análisis masivo de datos mediante SQL.
+</p>
+
+<div class="v-hint">
+<span class="arrow">↓</span>
+Descripción · Usos principales · Formatos soportados
+</div>
+
+</section>
+
+
+<!-- Descripción -->
+
+<section>
+
+<h2>Uso</h2>
+
+<div class="card">
+
+<p>
+
+Se utiliza principalmente para el análisis de datos históricos
+acumulados (Business Intelligence), la minería de datos y la
+ejecución de procesos ETL (extraer, transformar y cargar
+información a gran escala). Es ideal para procesar cargas masivas
+de trabajo por lotes, aunque no está diseñado para consultas en
+tiempo real o transacciones rápidas.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- Usos principales -->
+
+<section>
+
+<h2>¿Para qué sirve?</h2>
+
+<div class="use-case">
+<div class="uc-title">
+📊 Analítica por lotes (OLAP)
+</div>
+Analizar datasets gigantes (TB–PB) con SQL, sin programar Java.
+</div>
+
+<div class="use-case">
+<div class="uc-title">
+🔄 Procesos ETL
+</div>
+Extraer, transformar y cargar información a gran escala.
+</div>
+
+<div class="use-case">
+<div class="uc-title">
+📁 Catálogo central de tablas
+</div>
+Soporta CSV, JSON, Parquet, ORC e Iceberg.
+</div>
+
+</section>
+
+</section>
+
+<!-- ========================= -->
+<!-- TEMA 3: Diagrama -->
+<!-- ========================= -->
+
+<section>
+
+<!-- Portada del tema -->
+
+<section class="sec-cover">
+
+<div class="num">🗺️</div>
+
+<h2>
+Diagrama de Arquitectura
+</h2>
+
+<p>
+Flujo interno de Apache Hive.
+</p>
+
+<div class="v-hint">
+<span class="arrow">↓</span>
+Diagrama · Descripción
+</div>
+
+</section>
+
+
+<!-- Espacio para el diagrama -->
+
+<section>
+
+<h2>Diagrama</h2>
+
+<!--
+  AQUÍ VA TU DIAGRAMA.
+  Sustituye el contenido del div .media-placeholder por:
+  <img src="TU_IMAGEN.png" style="max-height:420px; border-radius:10px;">
+-->
+<div class="media-placeholder">
+<div>
+<strong>📌 Espacio para el Diagrama</strong>
+Inserta aquí la imagen del diagrama de arquitectura de Hive
+</div>
+</div>
+
+</section>
+
+
+<!-- Descripción del diagrama -->
+
+<section>
+
+<h2>Descripción del Diagrama</h2>
+
+<div class="card">
+
+<p>
+
+El diagrama que realizamos muestra el flujo de la arquitectura de
+Hive, donde la interfaz recibe la consulta del usuario, el Driver
+la compila y optimiza, y el Metastore (que guarda el diccionario
+de tablas y columnas) ayuda a ubicar los datos para que el motor
+de ejecución procese la orden final dentro del sistema de
+almacenamiento distribuido.
+
+</p>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- ========================= -->
+<!-- TEMA 4: Captura de implementación -->
+<!-- ========================= -->
+
+<section>
+
+<!-- Portada del tema -->
+
+<section class="sec-cover">
+
+<div class="num">💻</div>
+
+<h2>
+Captura de Implementación
+</h2>
+
+<p>
+Evidencia del entorno real de trabajo.
+</p>
+
+<div class="v-hint">
+<span class="arrow">↓</span>
+Captura · Descripción
+</div>
+
+</section>
+
+
+<!-- Espacio para la captura -->
+
+<section>
+
+<h2>Captura</h2>
+
+<!--
+  AQUÍ VA TU CAPTURA DE PANTALLA.
+  Sustituye el contenido del div .media-placeholder por:
+  <img src="TU_CAPTURA.png" style="max-height:420px; border-radius:10px;">
+-->
+<div class="media-placeholder">
+<div>
+<strong>📌 Espacio para la Captura</strong>
+Inserta aquí la captura de la implementación realizada
+</div>
+</div>
+
+</section>
+
+
+<!-- Descripción de la captura -->
+
+<section>
+
+<h2>Descripción de la Captura de Implementación</h2>
+
+<div class="card">
+
+<p>
+
+En la captura de nuestra implementación se observa el entorno real
+de trabajo donde creamos una tabla estructurada mediante comandos
+SQL, la vinculamos a una ruta de almacenamiento específica con
+archivos crudos y ejecutamos una consulta de prueba que procesa la
+información y nos devuelve el resultado directo en la consola.
+
+</p>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- ========================= -->
+<!-- TEMA 5: Creadores y soporte -->
+<!-- ========================= -->
+
+<section>
+
+<!-- Portada del tema -->
+
+<section class="sec-cover">
+
+<div class="num">🕰️</div>
+
+<h2>
+Creadores y Soporte
+</h2>
+
+<p>
+Historia y respaldo del proyecto.
+</p>
+
+<div class="v-hint">
+<span class="arrow">↓</span>
+Origen · Comunidad · Soporte comercial · Versión actual
+</div>
+
+</section>
+
+
+<!-- Origen -->
+
+<section>
+
+<h2>Origen</h2>
+
+<div class="card">
+🏗️ Creado en Facebook por Joydeep Sen Sarma y Ashish Thusoo (~2007–2008).
+<span class="fuente">Fuente: Databricks</span>
+</div>
+
+<div class="card">
+🎤 Presentado en el Hadoop Summit 2008; luego donado a Apache.
+<span class="fuente">Fuente: YourStory</span>
+</div>
+
+</section>
+
+
+<!-- Comunidad y soporte -->
+
+<section>
+
+<h2>Comunidad y Soporte</h2>
+
+<div class="card">
+🌐 Hoy es un proyecto top-level de la Apache Software Foundation (comunidad open-source).
+<span class="fuente">Fuente: Databricks</span>
+</div>
+
+<div class="card">
+🛠️ Soporte comercial/gestionado: AWS EMR, Cloudera, Google Dataproc, Azure HDInsight.
+</div>
+
+<div class="card">
+🔢 Versión actual 4.x (la línea 3.x ya es End of Life).
+</div>
+
+</section>
+
+</section>
+
+<!-- ========================= -->
+<!-- Mapa mental resumen -->
+<!-- ========================= -->
+
+<section>
+
+<section class="sec-cover">
+
+<div class="num">🧠</div>
+
+<h2>
+Resumen del Tema
+</h2>
+
+<p>
+Apache Hive en un solo vistazo.
+</p>
+
+<div class="v-hint">
+<span class="arrow">↓</span>
+Mapa Conceptual
+</div>
+
+</section>
+
+<section>
+
+<h2>Apache Hive</h2>
+
+<div class="card">
+<strong style="color:var(--accent2)">¿Qué es?</strong> → Data warehouse SQL sobre Hadoop.
+</div>
+
+<div class="card">
+<strong style="color:var(--accent2)">Uso</strong> → Analítica por lotes, ETL y BI sobre datasets masivos.
+</div>
+
+<div class="card">
+<strong style="color:var(--accent2)">Diagrama</strong> → Interfaz → Driver → Metastore → Motor de ejecución.
+</div>
+
+<div class="card">
+<strong style="color:var(--accent2)">Captura</strong> → Creación de tabla, carga de datos y consulta de prueba.
+</div>
+
+</section>
+
+</section>
+
+<!-- ========================= -->
+<!-- Final -->
+<!-- ========================= -->
+
+<section>
+
+<section class="sec-cover">
+
+<div class="num">🎉</div>
+
+<h2>
+¡Gracias por su atención!
+</h2>
+
+<p>
+Apache Hive.
+</p>
+
+<div class="v-hint">
+<span class="arrow">↓</span>
+Fin de la presentación
+</div>
+
+</section>
+</section>
+
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+
+<script>
+Reveal.initialize({
+  hash:true,
+  controls:true,
+  progress:true,
+  slideNumber:true,
+  transition:'slide'
+});
+</script>
+
+</body>
+</html>
